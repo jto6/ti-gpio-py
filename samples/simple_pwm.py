@@ -27,6 +27,7 @@ output_pins = {
     "J721E_SK": 32,
     "AM68_SK": 32,
     "AM69_SK": 32,
+    "AM62_SK": 12,
     "AM62A_SK": 35,
     "AM62P_SK": 35,
     "J722S_EVM": 33,

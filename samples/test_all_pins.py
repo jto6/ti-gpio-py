@@ -42,6 +42,11 @@ pin_datas = {
         "input_only": (),
         "hw_pwm": (32, 33, 36),  # HW PWMs to skip for this test
     },
+    "AM62_SK": {
+        "unimplemented": (),
+        "input_only": (),
+        "hw_pwm": (12, 33, 35, 40),  # HW PWMs to skip for this test
+    },
     "AM62A_SK": {
         "unimplemented": (7,),
         "input_only": (),

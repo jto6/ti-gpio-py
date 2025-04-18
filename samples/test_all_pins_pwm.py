@@ -36,6 +36,19 @@ all_pwm_pins = {
         "sw_pwm": [7, 15, 19, 21, 22, 23, 24, 26, 29, 31],  # Can be any valid GPIO pins
         "hw_pwm": [32, 33, 36],  # Designated HW PWM pins
     },
+    "AM62_SK": {
+        "sw_pwm": [
+            14,
+            33,
+            36,
+            38,
+            39,
+            40,
+            41,
+            42,
+        ],  # Can be any valid GPIO pins
+        "hw_pwm": [12, 33, 36, 40],  # Designated HW PWM pins
+    },
     "AM62A_SK": {
         "sw_pwm": [
             8,

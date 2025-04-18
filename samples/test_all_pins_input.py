@@ -78,6 +78,18 @@ am69_sk_pin_defs = [
     (40, 21, "GPIO0_45"),
 ]
 
+am62_sk_pin_defs = [
+    # BOARD BCM SOC
+    (13, 27, "GPIO0_42"),
+    (16, 23, "GPIO0_38"),
+    (18, 24, "GPIO0_39"),
+    (22, 25, "GPIO0_14"),
+    (29, 5, "GPIO0_36"),
+    (31, 6, "GPIO0_33"),
+    (32, 12, "GPIO0_40"),
+    (37, 26, "GPIO0_41"),
+]
+
 am62a_sk_pin_defs = [
     # BOARD BCM SOC
     # (7, 4, "GPIO1_30"),
@@ -154,6 +166,7 @@ all_pins = {
     "J721E_SK": j721e_sk_pin_defs,  # all non hw-pwm pins
     "AM68_SK": am68_sk_pin_defs,  # all non hw-pwm pins
     "AM69_SK": am69_sk_pin_defs,  # all non hw-pwm pins
+    "AM62_SK": am62_sk_pin_defs,  # all non hw-pwm pins
     "AM62A_SK": am62a_sk_pin_defs,  # all non hw-pwm pins
     "AM62P_SK": am62p_sk_pin_defs,  # all non hw-pwm pins
     "J722S_EVM": j722s_evm_pin_defs,  # all non hw-pwm pins

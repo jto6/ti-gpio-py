@@ -25,6 +25,7 @@ import sys
 J721E_SK = "J721E_SK"
 AM68_SK = "AM68_SK"
 AM69_SK = "AM69_SK"
+AM62_SK = "AM62_SK"
 AM62A_SK = "AM62A_SK"
 AM62P_SK = "AM62P_SK"
 J722S_EVM = "J722S_EVM"
@@ -157,6 +158,41 @@ AM69_SK_PIN_DEFS = [
 compats_am69sk = (
     "ti,am69-sk",
     "ti,j784s4",
+)
+
+AM62_SK_PIN_DEFS = [
+    #   OFFSET   GPIOCHIP_X  sysfs_dir      BOARD BCM SOC_NAME    PWM_SysFs  PWM_Id
+    (44, 1, "600000.gpio", 3, 2, "I2C2_SDA", None, None),
+    (43, 1, "600000.gpio", 5, 3, "I2C2_SCL", None, None),
+    (30, 2, "601000.gpio", 7, 4, "GPIO1_30", None, None),
+    (25, 2, "601000.gpio", 8, 14, "GPIO1_25", None, None),
+    (24, 2, "601000.gpio", 10, 15, "GPIO1_24", None, None),
+    (11, 2, "601000.gpio", 11, 17, "GPIO1_11", None, None),
+    (13, 2, "601000.gpio", 12, 18, "GPIO1_13", "23000000.pwm", 0),
+    (42, 1, "600000.gpio", 13, 27, "GPIO0_42", None, None),
+    (32, 2, "600000.gpio", 15, 22, "GPIO0_32", None, None),
+    (38, 1, "600000.gpio", 16, 23, "GPIO0_38", None, None),
+    (39, 1, "600000.gpio", 18, 24, "GPIO0_39", None, None),
+    (18, 2, "601000.gpio", 19, 10, "GPIO1_18", None, None),
+    (19, 2, "601000.gpio", 21, 9, "GPIO1_19", None, None),
+    (14, 1, "600000.gpio", 22, 25, "GPIO0_14", None, None),
+    (17, 2, "601000.gpio", 23, 11, "GPIO1_17", None, None),
+    (15, 2, "601000.gpio", 24, 8, "GPIO1_15", None, None),
+    (16, 2, "601000.gpio", 26, 7, "GPIO1_16", None, None),
+    (36, 1, "600000.gpio", 29, 5, "GPIO0_36", None, None),
+    (33, 1, "600000.gpio", 31, 6, "GPIO0_33", None, None),
+    (40, 1, "600000.gpio", 32, 12, "GPIO0_40", None, None),
+    (10, 2, "601000.gpio", 33, 13, "GPIO1_10", "23010000.pwm", 1),
+    (8, 2, "601000.gpio", 35, 19, "GPIO1_8", None, None),
+    (9, 2, "601000.gpio", 36, 16, "GPIO1_09", "23010000.pwm", 0),
+    (41, 1, "600000.gpio", 37, 26, "GPIO0_41", None, None),
+    (7, 2, "601000.gpio", 38, 20, "GPIO1_07", None, None),
+    (14, 2, "601000.gpio", 40, 21, "GPIO1_14", "23000000.pwm", 1),
+]
+
+compats_am62sk = (
+    "ti,am625-sk",
+    "ti,am625",
 )
 
 AM62A_SK_PIN_DEFS = [
@@ -295,6 +331,16 @@ board_gpio_data = {
             "PROCESSOR": "ARM A72",
         },
     ),
+    AM62_SK: (
+        AM62_SK_PIN_DEFS,
+        {
+            "RAM": "2048M",
+            "REVISION": "142A",
+            "TYPE": "AM62-SK",
+            "MANUFACTURER": "TI",
+            "PROCESSOR": "ARM A53",
+        },
+    ),
     AM62A_SK: (
         AM62A_SK_PIN_DEFS,
         {
@@ -355,6 +401,8 @@ def get_data():
         model = AM68_SK
     elif matches(compats_am69sk):
         model = AM69_SK
+    elif matches(compats_am62sk):
+        model = AM62_SK
     elif matches(compats_am62ask):
         model = AM62A_SK
     elif matches(compats_am62psk):
