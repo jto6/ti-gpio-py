@@ -29,6 +29,7 @@ AM62_SK = "AM62_SK"
 AM62A_SK = "AM62A_SK"
 AM62P_SK = "AM62P_SK"
 J722S_EVM = "J722S_EVM"
+BEAGLEYAI = "BEAGLEY-AI"
 
 OFFSET_ENTRY = 0
 GPIO_CHIP_ENTRY = 1
@@ -300,6 +301,33 @@ compats_j722sevm = (
     "ti,j722s",
 )
 
+BEAGLEYAI_PIN_DEFS = [
+    #   OFFSET   GPIOCHIP_X  sysfs_dir      BOARD BCM SOC_NAME    PWM_SysFs  PWM_Id
+    (18, 1, "4201000.gpio", 3, 2, "I2C2_SDA", None, None),
+    (17, 1, "4201000.gpio", 5, 3, "I2C2_SCL", None, None),
+    (14, 3, "601000.gpio", 8, 14, "GPIO1_14", None, None),
+    (13, 3, "601000.gpio", 10, 15, "GPIO1_15", "23000000.pwm", 0),
+    (8, 3, "601000.gpio", 11, 17, "GPIO1_17", None, None),
+    (11, 3, "601000.gpio", 12, 18, "GPIO1_18", None, None),
+    (33, 2, "600000.gpio", 13, 27, "GPIO0_27", None, None),
+    (7, 1, "4201000.gpio", 16, 23, "GPIO0_23", None, None),
+    (3, 1, "4201000.gpio", 19, 10, "GPIO0_10", None, None),
+    (4, 1, "4201000.gpio", 21, 9, "GPIO0_00", None, None),
+    (42, 2, "600000.gpio", 22, 25, "GPIO0_25", None, None),
+    (2, 1, "4201000.gpio", 23, 11, "GPIO0_11", None, None),
+    (0, 1, "4201000.gpio", 24, 8, "GPIO0_08", None, None),
+    (17, 3, "601000.gpio", 31, 6, "GPIO1_06", None, None),
+    (16, 3, "601000.gpio", 32, 12, "GPIO1_12", "23000000.pwm", 1),
+    (18, 3, "601000.gpio", 33, 13, "GPIO1_13", None, None),
+    (12, 3, "601000.gpio", 35, 19, "GPIO1_19", None, None),
+    (36, 2, "600000.gpio", 37, 26, "GPIO0_26", None, None),
+    (10, 3, "601000.gpio", 38, 20, "GPIO1_20", None, None),
+]
+
+compats_beagleyai = (
+    "beagle,am67a-beagley-ai",
+)
+
 board_gpio_data = {
     J721E_SK: (
         J721E_SK_PIN_DEFS,
@@ -371,6 +399,16 @@ board_gpio_data = {
             "PROCESSOR": "ARM A53",
         },
     ),
+   BEAGLEYAI: (
+        BEAGLEYAI_PIN_DEFS,
+        {
+            "RAM": "4096M",
+            "REVISION": "E1",
+            "TYPE": "BEAGLEY-AI",
+            "MANUFACTURER": "BEAGLEBOARD.ORG",
+            "PROCESSOR": "ARM A53",
+        },
+    ),
 }
 
 
@@ -407,6 +445,8 @@ def get_data():
         model = AM62A_SK
     elif matches(compats_am62psk):
         model = AM62P_SK
+    elif matches(compats_beagleyai):
+        model = BEAGLEYAI
     elif matches(compats_j722sevm):
         model = J722S_EVM
 

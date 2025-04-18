@@ -119,6 +119,12 @@ all_pwm_pins = {
         ],  # Can be any valid GPIO pins
         "hw_pwm": [29, 31, 33],  # Designated HW PWM pins
     },
+    "BEAGLEY-AI": {
+        "sw_pwm": [
+            8,
+        ],  # Can be any valid GPIO pins
+        "hw_pwm": [32, 33],  # Designated HW PWM pins
+    },
 }
 
 pin_data = all_pwm_pins.get(GPIO.model)

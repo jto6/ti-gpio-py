@@ -162,6 +162,11 @@ j722s_evm_pin_defs = [
     (40, 21, "GPIO1_09"),
 ]
 
+beagleyai_pin_defs = [
+    # BOARD BCM SOC
+    (8, 14, "GPIO1_14"),
+]
+
 all_pins = {
     "J721E_SK": j721e_sk_pin_defs,  # all non hw-pwm pins
     "AM68_SK": am68_sk_pin_defs,  # all non hw-pwm pins
@@ -170,6 +175,7 @@ all_pins = {
     "AM62A_SK": am62a_sk_pin_defs,  # all non hw-pwm pins
     "AM62P_SK": am62p_sk_pin_defs,  # all non hw-pwm pins
     "J722S_EVM": j722s_evm_pin_defs,  # all non hw-pwm pins
+    "BEAGLEY-AI": beagleyai_pin_defs,  # all non hw-pwm pins
 }
 
 pin_defs = all_pins.get(GPIO.model)

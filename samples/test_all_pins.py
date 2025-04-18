@@ -62,6 +62,11 @@ pin_datas = {
         "input_only": (),
         "hw_pwm": (29, 31, 33),  # HW PWMs to skip for this test
     },
+    "BEAGLEY-AI": {
+        "unimplemented": (),
+        "input_only": (),
+        "hw_pwm": (32, 33),  # HW PWMs to skip for this test
+    },
 }
 
 pin_data = pin_datas.get(GPIO.model)
